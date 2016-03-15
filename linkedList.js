@@ -78,9 +78,20 @@ var tail = null;
            return currentHead; 
 
     },
-    insert : function insert () {
+    insert : function insert (value, num) {
 
+                var replacedNode = module.get(num);
+                var insertedNode = {
+                  value : value,
+                  next : replacedNode
+                };
+                var beforeInsert = module.get(num-1);
+                beforeInsert.next = insertedNode;
 
+                if (num === 0) {
+                  head = insertedNode;
+                }
+                return false;
     }
 
 
